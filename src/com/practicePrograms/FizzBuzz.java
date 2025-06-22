@@ -33,12 +33,14 @@ public synchronized void buzz() throws InterruptedException {
         while (current <= n && (current % 5 != 0 || current % 15 == 0)) {
             wait();
         }
+        
         if (current <= n) {
             System.out.println("Buzz");
             current++;
             notifyAll();
         }
     }
+
 }
 
 public synchronized void fizzbuzz() throws InterruptedException {
